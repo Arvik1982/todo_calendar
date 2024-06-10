@@ -1,11 +1,15 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { dateToString, dayNames } from "../../helpers/data/lib";
 import { dayOffCheck } from "../../helpers/functions/helpers";
 import styles from "./myCalendar.module.css";
 import { IRootStoreType, WeeksPropsType} from "../../types/types";
 import Todo from "../Todo/Todo";
+import AddButton from "../Buttons/AddButton";
+
 
 export default function Week ({weeks}:WeeksPropsType){  
+
+  
   
     const dataWeekNumber = useSelector(
         (state: IRootStoreType) => state.calendarReducer.data.weekNumber
@@ -22,7 +26,9 @@ export default function Week ({weeks}:WeeksPropsType){
     return(<> {weeks ? weeks[dataWeekNumber]?.map((element, index) => {
             return (
               <div key={index} className={styles.container__week_day}>
+                <div className={styles.week__day_head}>
                 {yearHolydays?
+               
                   <span
                     style={
                       !dayOffCheck(element,yearHolydays)
@@ -41,6 +47,10 @@ export default function Week ({weeks}:WeeksPropsType){
                 <span className={styles.week__day_date}>
                   {dateToString(element)}
                 </span>
+
+                <AddButton date ={element}/>
+                </div>
+               
                 <Todo date ={element}/>
               </div>
             );

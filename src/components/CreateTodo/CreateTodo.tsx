@@ -23,18 +23,27 @@ export default function CreateTodo() {
       const eventDate = JSON.parse(eventDateRedux)
 
       const addEvent =()=>{
+
     localStorage.getItem('events')!==null?'':localStorage.setItem('events',JSON.stringify([]))
       const eventsArr =JSON.parse(  localStorage.getItem('events')||'' )
+      const idEvent = new Date().getTime()
       const event = {
         user:user,
         date:eventDate, 
-        text:textValue
+        text:{
+          id:idEvent,
+          text:textValue}
         } 
-        event.text?eventsArr.push(event):''
+        event.text.text?eventsArr.push(event):''
   
       localStorage.setItem('events',JSON.stringify(eventsArr))
     dispatch(setCreateTodoClose()) 
       }
+
+
+
+
+
 
   return (
     <div onClick={closeModal}  className={styles.container}>
