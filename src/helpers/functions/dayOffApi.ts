@@ -1,10 +1,12 @@
-import { Action, ActionCreatorWithPayload } from "@reduxjs/toolkit";
+import { Action, ActionCreatorWithPayload, UnknownAction } from "@reduxjs/toolkit";
 import { Dispatch } from "react";
+import { setWeekendsError } from "../../store/slices/dataSlice";
 
 export default async function dayOffApi(
   year: number,
   daysOffYear: ActionCreatorWithPayload<string>,
-  dispatch: Dispatch<Action>
+  dispatch:Dispatch<Action>,
+  
 ) {
   const currentYearDates = (start: Date, end: Date) => {
     const result = [];
@@ -37,6 +39,7 @@ export default async function dayOffApi(
     });
     dispatch(daysOffYear(JSON.stringify(newArr)));
   } catch (error) {
-    console.log(error);
+    dispatch(setWeekendsError('Ошибка соединения'))
+    
   }
 }

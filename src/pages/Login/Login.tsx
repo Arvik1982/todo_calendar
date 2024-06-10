@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function Login() {
   useEffect(() => {
-    dispatch(setNewUser(''))
+    dispatch(setNewUser(""));
     localStorage.getItem("users") === null
       ? localStorage.setItem("users", JSON.stringify([]))
       : "";
@@ -47,9 +47,8 @@ export default function Login() {
         >
           Вход
         </button>
-        {error?<span className={styles.error}>{error}</span>:''}
+        {error ? <span className={styles.error}>{error}</span> : ""}
       </div>
-      
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./myCalendar.module.css";
 import { weekIntervals } from "../../helpers/functions/createWeekIntervals";
 import dayOffApi from "../../helpers/functions/dayOffApi";
-import { daysOffYear } from "../../store/slices/dataSlice";
+import { daysOffYear, setWeekendsError } from "../../store/slices/dataSlice";
 import { useDispatch, useSelector } from "react-redux";
 import {
   CalendarPropsType,
@@ -24,6 +24,7 @@ export default function MyCalendar({
   const dataWeekNumber = useSelector(
     (state: IRootStoreType) => state.calendarReducer.data.weekNumber
   );
+
   const dataSelectedYear = useSelector(
     (state: IRootStoreType) => state.calendarReducer.data.selectedYear
   );

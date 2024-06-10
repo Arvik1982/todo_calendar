@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const currentMonth = new Date().getMonth() + 1;
 const currentDate = new Date();
@@ -18,6 +18,7 @@ const dataSlice = createSlice({
     users: [],
     currentUser: "",
     createTodoOpen: false,
+    weekendsError:'',
   },
 
   reducers: {
@@ -57,6 +58,9 @@ const dataSlice = createSlice({
     setCreateTodoClose(state) {
       state.createTodoOpen = false;
     },
+    setWeekendsError(state, action:PayloadAction<string>) {
+      state.weekendsError = action.payload;
+    },
   },
 });
 
@@ -70,5 +74,6 @@ export const {
   exit,
   setCreateTodoOpen,
   setCreateTodoClose,
+  setWeekendsError
 } = dataSlice.actions;
 export default dataSlice.reducer;

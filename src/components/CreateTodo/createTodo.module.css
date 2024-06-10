@@ -41,3 +41,25 @@
 .content__buttons_button {
   width: 150px;
 }
+@media (max-width: 426px) {
+  .container__content {
+    padding: 25px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    width: 88%;
+    height: 300px;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 7px 21px rgba(83, 92, 105, 0.12),
+      0 -1px 6px 0 rgba(83, 92, 105, 0.06);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .content__buttons_button {
+    width: 120px;
+  }
+}
