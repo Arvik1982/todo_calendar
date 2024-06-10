@@ -4,10 +4,10 @@
   align-items: center;
   gap: 10px;
 }
-.week__day_head{
+.week__day_head {
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
 }
 .calendar__container_buttons {
   display: flex;
@@ -27,6 +27,10 @@
 }
 
 .calendar__container_week {
+  border-radius: 10px;
+  background-color: #f5fbfc;
+  padding: 3px;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 300px 300px 300px 300px;
   grid-template-rows: 300px 300px;
@@ -34,17 +38,57 @@
 }
 
 .container__week_day {
- padding-bottom: 20px;
-
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 7px 21px rgba(83, 92, 105, 0.12),
     0 -1px 6px 0 rgba(83, 92, 105, 0.06);
 }
 
-.week__day_name { 
+.week__day_name {
   width: 98%;
   margin-top: 10px;
   font-size: large;
   font-weight: bold;
+}
+.day__date_error{
+  color: red;
+  font-size: small;
+}
+
+@media (max-width: 325px) {
+  .calendar__container_week {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .container__week_day {
+    height: 310px;
+    width: 300px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 7px 21px rgba(83, 92, 105, 0.12),
+      0 -1px 6px 0 rgba(83, 92, 105, 0.06);
+  }
+}
+
+@media (min-width:325px) and (max-width: 426px) {
+  .calendar__container_week {
+    display: grid;
+    grid-template-columns: 300px 300px  ;
+    grid-template-rows: 300px 300px 300px 300px ;
+    gap: 15px;
+  }
+
+  .container__week_day {   
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 7px 21px rgba(83, 92, 105, 0.12),
+      0 -1px 6px 0 rgba(83, 92, 105, 0.06);
+  }
 }

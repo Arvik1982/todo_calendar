@@ -10,6 +10,9 @@ export default function Week({ weeks }: WeeksPropsType) {
   const dataWeekNumber = useSelector(
     (state: IRootStoreType) => state.calendarReducer.data.weekNumber
   );
+  const error = useSelector(
+    (state: IRootStoreType) => state.calendarReducer.weekendsError
+  );
   const yearHolydaysRedux = useSelector(
     (state: IRootStoreType) => state.calendarReducer.daysOffYear
   );
@@ -36,6 +39,7 @@ export default function Week({ weeks }: WeeksPropsType) {
                       }
                       className={styles.week__day_name}
                     >
+                      
                       {dayNames.map((dayName, index) => {
                         return element.getDay() === dayName.id
                           ? dayNames[index].name
@@ -45,9 +49,11 @@ export default function Week({ weeks }: WeeksPropsType) {
                   ) : (
                     ""
                   )}
+                  {error?<span  className={styles.day__date_error}>{error}</span>:''}
                   <span className={styles.week__day_date}>
                     {dateToString(element)}
                   </span>
+                  
                   <AddButton date={element} />
                 </div>
                 <Todo date={element} />

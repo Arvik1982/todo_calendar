@@ -22,3 +22,21 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 325px) {
+  .popup__container {
+    display: none;
+  }
+  
+  .popup__container_element {
+display: none;
+  }
+}
+@media (min-width:325px) and (max-width: 426px) {
+  .popup__container {
+    display: none;
+  }
+  
+  .popup__container_element {
+display: none;
+  }
+}

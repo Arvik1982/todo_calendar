@@ -1,15 +1,19 @@
 import MyCalendar from "../../components/Calendar/MyCalendar";
 import Header from "../../components/Header/Header";
 import styles from "./userPage.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { IRootStoreType } from "../../types/types";
 import down from "../../../public/down_arrow_ngsvqhli4jd3.svg";
 import PopUpMenu from "../../components/PopUp/PopUpMenu";
 import { useState } from "react";
 import CreateTodo from "../../components/CreateTodo/CreateTodo";
+import { exit } from "../../store/slices/dataSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function UserPage() {
   const [popupVisible, setPopupVisible] = useState(false);
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const dataSelectedMonth = useSelector(
     (state: IRootStoreType) => state.calendarReducer.data.selectedMonth
@@ -37,7 +41,8 @@ export default function UserPage() {
   return (
     <div className={styles.userpage__container}>
       <div className={styles.userpage__container_title}>
-        <h1>Список дел</h1>
+        <h1 className={styles.container__title_header}>Список дел</h1>
+        <button className={styles.title__header_exit} onClick={()=>{dispatch(exit());navigate('/')}}> Выйти </button>
         <div className={styles.userpage__container_menu}>
           <span>Список для: </span>
           {user ? (
