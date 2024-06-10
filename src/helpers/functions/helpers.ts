@@ -5,6 +5,7 @@ import {
   setDataWeekNumber,
 } from "../../store/slices/dataSlice";
 import { Action, ActionCreatorWithPayload } from "@reduxjs/toolkit";
+import { TextType, TodosElementType } from "../../types/types";
 
 export const dayOffCheck = (
   el: Date,
@@ -71,4 +72,19 @@ export const changeYearForward = (
   dispatch(setDataSelectedMonth(1));
   dispatch(setDataWeekNumber(0));
   dispatch(setDataSelectedYear(dataSelectedYear + 1));
+};
+
+export const filteredEvent = (newDate: Date, todos: [], user: string) => {
+  if (todos) {
+    const result: TextType[] = [];
+    todos.forEach((element: TodosElementType) => {
+      if (element.user === user) {
+        new Date(element.date).getTime() === newDate.getTime()
+          ? result.push(element.text)
+          : "";
+      }
+    });
+
+    return result;
+  }
 };

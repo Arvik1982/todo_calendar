@@ -12,7 +12,7 @@
   align-items: center;
   flex-wrap: wrap;
   align-content: center;
-justify-content: space-between
+  justify-content: space-between;
 }
 .container__title_name {
   font-size: larger;
@@ -21,7 +21,7 @@ justify-content: space-between
 .container__title_arrow {
   width: 20px;
   height: 20px;
-  rotate:180deg;
+  rotate: 180deg;
 }
 .userpage__container_menu {
   position: relative;

@@ -1,28 +1,25 @@
-
-
-.login__container_enter{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.login__container_enter {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.container__enter_input{
-    border: 0;
-    padding: 5px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    height: 40px;
-    box-shadow: 0 7px 21px rgba(83, 92, 105, 0.12),
+.container__enter_input {
+  border: 0;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 40px;
+  box-shadow: 0 7px 21px rgba(83, 92, 105, 0.12),
     0 -1px 6px 0 rgba(83, 92, 105, 0.06);
 }
-.container__enter_button{
-    background-color:#d2ebd8;
-    
+.container__enter_button {
+  background-color: #d2ebd8;
 }
 
-.error{
-    color:red;
-    position:absolute;
-    bottom: -21px;
-    left:100px
+.error {
+  color: red;
+  position: absolute;
+  bottom: -21px;
+  left: 100px;
 }

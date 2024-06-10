@@ -1,28 +1,29 @@
-.header__container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:10px;
-    margin-bottom: 25px;
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
 }
-.container__names{
-    width: 100px;
+.container__names {
+  width: 100px;
 }
-.container__button{
-    width: 40px;
-    height: 40px;
-}.container__button_month{
-    width: 20px;
-    height: 20px;
+.container__button {
+  width: 40px;
+  height: 40px;
 }
-.header__container_year{
-    display: flex;
-    gap: 10px;
-    align-items: center;
+.container__button_month {
+  width: 20px;
+  height: 20px;
+}
+.header__container_year {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
-.header__container_month{
-    display: flex;
-    gap: 10px;
-    align-items: center;
+.header__container_month {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
