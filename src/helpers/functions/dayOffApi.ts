@@ -1,4 +1,4 @@
-import { Action, ActionCreatorWithPayload, UnknownAction } from "@reduxjs/toolkit";
+import { Action, ActionCreatorWithPayload} from "@reduxjs/toolkit";
 import { Dispatch } from "react";
 import { setWeekendsError } from "../../store/slices/dataSlice";
 
