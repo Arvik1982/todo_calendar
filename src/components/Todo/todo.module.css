@@ -1,0 +1,16 @@
+.todo__container {
+  margin-top: 15px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: auto;
+}
+.container__todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  background-color: rgba(54, 137, 119, 0.12);
+  border-radius: 3px;
+}

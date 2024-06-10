@@ -1,0 +1,44 @@
+.calendar__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.calendar__container_buttons {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.button__week_number {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #26aa3c;
+}
+
+.calendar__container_week {
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px;
+  grid-template-rows: 300px 300px;
+  gap: 15px;
+}
+
+.container__week_day {
+ padding-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 7px 21px rgba(83, 92, 105, 0.12),
+    0 -1px 6px 0 rgba(83, 92, 105, 0.06);
+}
+
+.week__day_name { 
+  margin-top: 10px;
+  font-size: large;
+  font-weight: bold;
+}

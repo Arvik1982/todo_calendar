@@ -1,0 +1,25 @@
+.popup__container {
+  top: 40px;
+  right: 0px;
+  position: absolute;
+  width: 250px;
+  height: 50px;
+  box-shadow: 0 7px 21px rgba(83, 92, 105, 0.12),
+    0 -1px 6px 0 rgba(83, 92, 105, 0.06);
+  border-radius: 8px;
+  display: flex; 
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.popup__container_element{
+  
+    font-weight: bold;
+    width: 100%;
+    border-radius: 8px;
+    background-color: rgba(54, 137, 119, 0.12);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
