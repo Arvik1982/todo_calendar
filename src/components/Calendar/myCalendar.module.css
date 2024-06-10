@@ -56,7 +56,7 @@
   font-size: small;
 }
 
-@media (max-width: 325px) {
+@media (max-width: 375px) {
   .calendar__container_week {
     display: flex;
     flex-direction: column;
@@ -75,7 +75,7 @@
   }
 }
 
-@media (min-width:325px) and (max-width: 426px) {
+@media (min-width:375px) and (max-width: 426px) {
   .calendar__container_week {
     display: grid;
     grid-template-columns: 300px 300px  ;
