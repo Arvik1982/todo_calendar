@@ -47,7 +47,7 @@ export default function Header() {
         <img
           src={back}
           alt="back"
-          className={styles.container__button_month}
+          className={styles.container__button}
           onClick={() => {
             changeMonthBack(dispatch, dataSelectedMonth);
           }}
@@ -58,7 +58,7 @@ export default function Header() {
         <img
           src={forward}
           alt="forward"
-          className={styles.container__button_month}
+          className={styles.container__button}
           onClick={() => {
             changeMonthForward(dispatch, dataSelectedMonth);
           }}
