@@ -42,7 +42,7 @@ export default function UserPage() {
     <div className={styles.userpage__container}>
       <div className={styles.userpage__container_title}>
         <h1 className={styles.container__title_header}>Список дел</h1>
-        <button className={styles.title__header_exit} onClick={()=>{dispatch(exit());navigate('/')}}> Выйти </button>
+        <span className={styles.title__header_exit} onClick={()=>{dispatch(exit());navigate('/')}}> Выйти </span>
         <div className={styles.userpage__container_menu}>
           <span>Список для: </span>
           {user ? (

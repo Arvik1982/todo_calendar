@@ -48,7 +48,7 @@
   }
   .container__title_header {
     width: 300px;
-    /* margin-top: -25px; */
+    margin-top: -25px;
     margin-bottom: 5px;
   }
   .userpage__container_menu {
@@ -58,6 +58,8 @@
   }
   .title__header_exit{
     display: block;
+    font-weight: bold;
+    cursor: pointer;
   }
 }
 @media (min-width:426px) and (max-width: 760px) {
@@ -82,5 +84,7 @@
 }
 .title__header_exit{
   display: block;
+  font-weight: bold;
+  cursor: pointer;
 }
 }
