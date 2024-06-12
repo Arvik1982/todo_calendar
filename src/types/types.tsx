@@ -7,15 +7,17 @@ export type CalendarPropsType = {
   endMonth?: string;
 };
 export type WeeksType = Array<Date[]>;
-export type WeeksPropsType = { weeks: Array<Date[]> };
+export type WeeksPropsType = { weeks: Array<Date[]>|'' };
 export type PaginateButtonType = {
   type: string;
 };
 export type TodoPropsType = {
   date: Date;
 };
+
+
 export type TodosElementType = {
-  date: Date;
+  date: string;
   user: string;
   text: {
     checked: boolean;
@@ -23,6 +25,8 @@ export type TodosElementType = {
     text: string;
   };
 };
+export type TodosArrayType =
+ TodosElementType[]
 
 export type TextType = {
   checked: boolean;

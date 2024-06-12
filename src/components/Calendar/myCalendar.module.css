@@ -64,8 +64,8 @@
   }
 
   .container__week_day {
-    height: 310px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
     padding-bottom: 20px;
     box-sizing: border-box;
     display: flex;

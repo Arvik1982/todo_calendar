@@ -41,7 +41,7 @@ export default function UserPage() {
   return (
     <div className={styles.userpage__container}>
       <div className={styles.userpage__container_title}>
-        <h1 className={styles.container__title_header}>Список дел</h1>
+        <h1 className={styles.container__title_header}>список дел</h1>
         <span className={styles.title__header_exit} onClick={()=>{dispatch(exit());navigate('/')}}> Выйти </span>
         <div className={styles.userpage__container_menu}>
           <span>Список для: </span>

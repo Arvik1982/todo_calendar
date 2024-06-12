@@ -7,6 +7,7 @@ import Todo from "../Todo/Todo";
 import AddButton from "../Buttons/AddButton";
 
 export default function Week({ weeks }: WeeksPropsType) {
+  console.log(weeks)
   const dataWeekNumber = useSelector(
     (state: IRootStoreType) => state.calendarReducer.data.weekNumber
   );

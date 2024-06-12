@@ -5,13 +5,14 @@ import {
   setDataWeekNumber,
 } from "../../store/slices/dataSlice";
 import { Action, ActionCreatorWithPayload } from "@reduxjs/toolkit";
-import { TextType, TodosElementType } from "../../types/types";
+import { TextType, TodosArrayType, TodosElementType } from "../../types/types";
 
 export const dayOffCheck = (
   el: Date,
-  yearHolydays: [{ date: string; dayoff: string }]
+  yearHolydays: { date: string; dayoff: string }[]
 ) => {
   let result;
+  
   yearHolydays.forEach((element) => {
     const d1 = new Date(element.date).toLocaleString().slice(0, 10);
     const d2 = new Date(el).toLocaleString().slice(0, 10);
@@ -74,8 +75,10 @@ export const changeYearForward = (
   dispatch(setDataSelectedYear(dataSelectedYear + 1));
 };
 
-export const filteredEvent = (newDate: Date, todos: [], user: string) => {
+export const filteredEvent = (newDate: Date, todos:TodosArrayType, user: string) => {
+ 
   if (todos) {
+    console.log({todos, newDate, user})
     const result: TextType[] = [];
     todos.forEach((element: TodosElementType) => {
       if (element.user === user) {
@@ -84,7 +87,7 @@ export const filteredEvent = (newDate: Date, todos: [], user: string) => {
           : "";
       }
     });
-
+console.log(result)
     return result;
   }
 };
