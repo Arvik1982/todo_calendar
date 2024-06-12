@@ -24,7 +24,7 @@
   left: 100px;
 }
 @media (max-width: 325px) {
-  .login__container{
+  .login__container {
     width: 310px;
     display: flex;
     flex-direction: column;

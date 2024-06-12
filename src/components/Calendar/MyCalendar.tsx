@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./myCalendar.module.css";
 import { weekIntervals } from "../../helpers/functions/createWeekIntervals";
 import dayOffApi from "../../helpers/functions/dayOffApi";
-import { daysOffYear} from "../../store/slices/dataSlice";
+import { daysOffYear } from "../../store/slices/dataSlice";
 import { useDispatch, useSelector } from "react-redux";
 import {
   CalendarPropsType,
@@ -17,7 +17,7 @@ export default function MyCalendar({
   startMonth,
   endMonth,
 }: CalendarPropsType) {
-  const [weeks, setWeeks] = useState<WeeksType>([]);
+  const [weeks, setWeeks] = useState<WeeksType | "">([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -29,14 +29,15 @@ export default function MyCalendar({
     (state: IRootStoreType) => state.calendarReducer.data.selectedYear
   );
 
-  useEffect(()=>{localStorage.getItem('currentUser')===null? navigate('/'):''},[])
+  useEffect(() => {
+    localStorage.getItem("currentUser") === null ? navigate("/") : "";
+  }, []);
 
   useEffect(() => {
     startMonth && endMonth ? setWeeks(weekIntervals(startMonth, endMonth)) : "";
   }, [startMonth, endMonth, dataSelectedYear]);
 
-  useEffect(() => { 
-   
+  useEffect(() => {
     dayOffApi(dataSelectedYear, daysOffYear, dispatch);
   }, [dataSelectedYear]);
 

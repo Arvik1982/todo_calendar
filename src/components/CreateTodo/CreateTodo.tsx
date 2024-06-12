@@ -26,7 +26,8 @@ export default function CreateTodo() {
     : localStorage.getItem("currentUser") !== null
     ? JSON.parse(localStorage.getItem("currentUser") || "")
     : "";
-  const eventDate = JSON.parse(eventDateRedux);
+
+  const eventDate =eventDateRedux? JSON.parse(eventDateRedux):'';
 
   const addEvent = () => {
     localStorage.getItem("events") !== null
