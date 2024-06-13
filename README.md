@@ -1,30 +1,61 @@
-# React + TypeScript + Vite
+#  Тестовое задание на позицию «Frontend-разработчик»
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Разработчик:
+phone.kulikovarseniy@gmail.com
 
-Currently, two official plugins are available:
+## Задача:
+Создать To-Do лист в виде календаря, где каждый день представлен как список задач. 
+При клике на день открывается модальное окно со списком задач. В этом окне можно 
+создавать новые задачи, удалять их и помечать как выполненные. 
+Условия 
+● Frontend: Реализация с использованием React и всего его встроенного 
+функционала. Использование дополнительных библиотек допустимо, но 
+нежелательно. 
+● Хранение данных: На ваше усмотрение (например, локальное хранилище, 
+context API и т.д.). 
+Критерии (реализация всего списка не обязательна, важнее качество, а не 
+количество) 
+1. Приятный внешний вид 
+2. Семантическая верстка 
+3. Адаптивный дизайн 
+4. Реализация через Flexbox или Grid (использование Tailwind или других 
+CSS-фреймворков не желательно) 
+5. Желательно использовать БЭМ 
+6. Маркировка праздничных дней с использованием isDayOff() API 
+7. Вывод задач по неделе 
+8. Использование TypeScript 
+9. Покрытие интерфейса тестами 
+10. Система профилей: у каждого профиля свой список задач, не отображаемый в 
+другом профиле 
+11. Реализовать Dependency Inversion для внешних HTTP-запросов 
+12. Понятная структура проекта 
+13. Разворачивание проекта в Docker
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Выполнено:
+1. Создан To-Do лист в виде календаря, где каждый день представлен как список задач.
+При клике на кнопку + открывается модальное окно где можно 
+создавать новые задачи. Удалять задачи и помечать как выполненные можно непосредственно из календаря. 
+2. Хранение данных: локальное хранилище.
+3. Приятный внешний вид 
+4. Семантическая верстка 
+5. Адаптивный дизайн 
+6. Реализация через Flexbox и Grid
+7. Использован БЭМ 
+8. Маркировка праздничных дней с использованием isDayOff() API 
+9. Вывод задач по неделе 
+10. Использование TypeScript 
+11. Покрытие интерфейса тестами 
+12. Система профилей: у каждого профиля свой список задач, не отображаемый в 
+другом профиле 
+13. Реализовать Dependency Inversion для внешних HTTP-запросов 
+14. Понятная структура проекта 
+15. Разворачивание проекта в Docker
 
-## Expanding the ESLint configuration
+## Технологический стек:
+React
+Redux/toolkit
+React Router
++ TypeScript + Vite
+Docker
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
