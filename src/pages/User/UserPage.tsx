@@ -12,8 +12,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function UserPage() {
   const [popupVisible, setPopupVisible] = useState(false);
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const dataSelectedMonth = useSelector(
     (state: IRootStoreType) => state.calendarReducer.data.selectedMonth
@@ -24,7 +24,6 @@ export default function UserPage() {
   const currentUser = useSelector(
     (state: IRootStoreType) => state.calendarReducer.currentUser
   );
-
   const createTodoOpened = useSelector(
     (state: IRootStoreType) => state.calendarReducer.createTodoOpen
   );
@@ -42,7 +41,16 @@ export default function UserPage() {
     <div className={styles.userpage__container}>
       <div className={styles.userpage__container_title}>
         <h1 className={styles.container__title_header}>список дел</h1>
-        <span className={styles.title__header_exit} onClick={()=>{dispatch(exit());navigate('/')}}> Выйти </span>
+        <span
+          className={styles.title__header_exit}
+          onClick={() => {
+            dispatch(exit());
+            navigate("/");
+          }}
+        >
+          {" "}
+          Выйти{" "}
+        </span>
         <div className={styles.userpage__container_menu}>
           <span>Список для: </span>
           {user ? (

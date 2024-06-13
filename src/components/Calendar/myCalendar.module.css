@@ -14,6 +14,10 @@
   gap: 25px;
   align-items: center;
 }
+.button__week_container{
+  display: flex;
+  gap:8px;
+}
 
 .button__week_number {
   display: flex;
@@ -73,6 +77,17 @@
     box-shadow: 0 7px 21px rgba(83, 92, 105, 0.12),
       0 -1px 6px 0 rgba(83, 92, 105, 0.06);
   }
+  .calendar__container_buttons{
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .button__week_container{
+    display: flex;
+    gap:8px;
+  }
 }
 
 @media (min-width:426px) and (max-width: 760px) {
@@ -90,5 +105,16 @@
     flex-direction: column;
     box-shadow: 0 7px 21px rgba(83, 92, 105, 0.12),
       0 -1px 6px 0 rgba(83, 92, 105, 0.06);
+  }
+  .calendar__container_buttons{
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .button__week_container{
+    display: flex;
+    gap:8px;
   }
 }
