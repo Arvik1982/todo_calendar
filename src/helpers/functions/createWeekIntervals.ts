@@ -6,7 +6,6 @@ export const weekIntervals = (startMonth: string, endMonth: string) => {
         result.push(new Date(String(start)));
         start.setDate(start.getDate() + 1);
       }
-
       return result;
     };
     const weekArray = [];
@@ -33,7 +32,6 @@ export const weekIntervals = (startMonth: string, endMonth: string) => {
     for (let i = 0; i <= 3; i += 1) {
       weekArray.push(lastPartMonth.splice(0, 7));
     }
-
     return weekArray;
   } else return "";
 };

@@ -31,7 +31,7 @@ export default function MyCalendar({
 
   useEffect(() => {
     localStorage.getItem("currentUser") === null ? navigate("/") : "";
-  }, []);
+    }, []);
 
   useEffect(() => {
     startMonth && endMonth ? setWeeks(weekIntervals(startMonth, endMonth)) : "";
@@ -45,8 +45,10 @@ export default function MyCalendar({
     <div key={dataSelectedYear} className={styles.calendar__container}>
       <div className={styles.calendar__container_buttons}>
         <PaginateDateButton type={"prev_week"} />
+        <div className={styles.button__week_container}>
         <span>Неделя</span>
         <div className={styles.button__week_number}>{dataWeekNumber + 1}</div>
+        </div>
         <PaginateDateButton type={"next_week"} />
       </div>
       <div className={styles.calendar__container_week}>
