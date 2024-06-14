@@ -2,16 +2,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { IRootStoreType } from "../../types/types";
 import styles from "./createTodo.module.css";
 import { useState } from "react";
-import {
-  setCreateTodoClose,
-  setCreateTodoOpen,
-} from "../../store/slices/dataSlice";
+import { setCreateTodoClose } from "../../store/slices/dataSlice";
 import { dateToString } from "../../helpers/data/lib";
 import Todo from "../Todo/Todo";
 
 export default function CreateTodo() {
   const [textValue, setTextValue] = useState("");
   const dispatch = useDispatch();
+
   const closeModal = () => {
     dispatch(setCreateTodoClose());
   };
@@ -72,12 +70,13 @@ export default function CreateTodo() {
         <div className={styles.container__content_buttons}>
           <button
             onClick={() => {
-              dispatch(setCreateTodoOpen(JSON.stringify(eventDate)));
+              dispatch(setCreateTodoClose());
             }}
             className={styles.content__buttons_button}
           >
-            Отмена
+            Закрыть
           </button>
+
           <button onClick={addEvent} className={styles.content__buttons_button}>
             Сохранить
           </button>

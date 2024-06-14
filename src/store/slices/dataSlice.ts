@@ -46,7 +46,7 @@ const dataSlice = createSlice({
   name: "data",
   initialState: {
     data: {
-      weekNumber: weekNumber?weekNumber:0,
+      weekNumber: weekNumber ? weekNumber : 0,
       selectedMonth: currentMonth,
       selectedYear: currentYear,
       event: "",
@@ -57,6 +57,7 @@ const dataSlice = createSlice({
     currentUser: "",
     createTodoOpen: false,
     weekendsError: "",
+    confirmDell: { status: false, element: 0 },
   },
 
   reducers: {
@@ -99,6 +100,10 @@ const dataSlice = createSlice({
     setWeekendsError(state, action: PayloadAction<string>) {
       state.weekendsError = action.payload;
     },
+    setDiscard(state, action) {
+      state.confirmDell.status = action.payload.status;
+      state.confirmDell.element = action.payload.element;
+    },
   },
 });
 
@@ -113,5 +118,6 @@ export const {
   setCreateTodoOpen,
   setCreateTodoClose,
   setWeekendsError,
+  setDiscard,
 } = dataSlice.actions;
 export default dataSlice.reducer;
