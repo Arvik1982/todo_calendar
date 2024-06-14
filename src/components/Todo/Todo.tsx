@@ -11,8 +11,8 @@ import { useState } from "react";
 import { filteredEvent } from "../../helpers/functions/helpers";
 
 export default function Todo({ date }: TodoPropsType) {
-  console.log(date)
   const [rerender, setRerender] = useState(0);
+
   const currentUser = useSelector(
     (state: IRootStoreType) => state.calendarReducer.currentUser
   );
@@ -32,6 +32,7 @@ export default function Todo({ date }: TodoPropsType) {
     result = todos.filter((el: TodosElementType) => {
       return el.text.id !== id;
     });
+
     localStorage.setItem("events", JSON.stringify(result));
     setRerender(rerender + 1);
   };
@@ -55,7 +56,7 @@ export default function Todo({ date }: TodoPropsType) {
             return (
               <div key={index} className={styles.container__todo}>
                 <input
-                  checked={el.checked}
+                  checked={el.checked ? el.checked : false}
                   onChange={() => {
                     checkEvent(el.id);
                   }}
@@ -67,6 +68,7 @@ export default function Todo({ date }: TodoPropsType) {
                 >
                   {el.text}
                 </span>
+
                 <img
                   onClick={() => {
                     deleteEvent(el.id);
