@@ -7,6 +7,7 @@ import {
   setCreateTodoOpen,
 } from "../../store/slices/dataSlice";
 import { dateToString } from "../../helpers/data/lib";
+import Todo from "../Todo/Todo";
 
 export default function CreateTodo() {
   const [textValue, setTextValue] = useState("");
@@ -27,7 +28,7 @@ export default function CreateTodo() {
     ? JSON.parse(localStorage.getItem("currentUser") || "")
     : "";
 
-  const eventDate =eventDateRedux? JSON.parse(eventDateRedux):'';
+  const eventDate = eventDateRedux ? JSON.parse(eventDateRedux) : "";
 
   const addEvent = () => {
     localStorage.getItem("events") !== null
@@ -67,7 +68,7 @@ export default function CreateTodo() {
           name=""
           id=""
         />
-
+        <Todo date={new Date(eventDate)} />
         <div className={styles.container__content_buttons}>
           <button
             onClick={() => {
