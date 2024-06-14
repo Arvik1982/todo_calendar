@@ -11,6 +11,7 @@ import { useState } from "react";
 import { filteredEvent } from "../../helpers/functions/helpers";
 
 export default function Todo({ date }: TodoPropsType) {
+  console.log(date)
   const [rerender, setRerender] = useState(0);
   const currentUser = useSelector(
     (state: IRootStoreType) => state.calendarReducer.currentUser
